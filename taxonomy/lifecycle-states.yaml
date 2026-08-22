@@ -1,0 +1,12 @@
+version: 1.0.0-draft
+namespace: eios-file-folder-lifecycle
+note: These terms describe organizational presentation states only and do not replace canonical EIOS lifecycle metadata.
+terms:
+  - code: ACTIVE
+    label: Active
+  - code: CLOSEOUT
+    label: Closeout
+  - code: CLOSED
+    label: Closed
+  - code: ARCHIVED
+    label: Archived Projection

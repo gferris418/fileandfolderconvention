@@ -1,0 +1,25 @@
+version: 1.0.0-draft
+namespace: eios-file-folder-document-type
+terms:
+  - code: DRG
+    label: Drawing
+  - code: SPEC
+    label: Specification
+  - code: RPT
+    label: Report
+  - code: MOM
+    label: Minutes of Meeting
+  - code: COR
+    label: Correspondence
+  - code: CTR
+    label: Contract
+  - code: INV
+    label: Invoice
+  - code: CERT
+    label: Certificate
+  - code: MAN
+    label: Manual
+  - code: PLAN
+    label: Plan
+  - code: REG
+    label: Register

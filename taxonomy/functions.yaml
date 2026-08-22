@@ -1,0 +1,17 @@
+version: 1.0.0-draft
+namespace: eios-file-folder-function
+terms:
+  - code: GOV
+    label: Governance
+  - code: OPS
+    label: Operations
+  - code: FIN
+    label: Finance and Treasury
+  - code: COM
+    label: Commercial
+  - code: PPL
+    label: People Administration
+  - code: KNW
+    label: Knowledge
+  - code: SHR
+    label: Shared Services
