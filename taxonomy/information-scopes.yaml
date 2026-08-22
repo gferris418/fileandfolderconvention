@@ -1,0 +1,31 @@
+version: 1.0.0-draft
+namespace: eios-file-folder-information-scope
+note: Navigation crosswalk only. Canonical EIOS informationScope and businessContext remain authoritative.
+terms:
+  - code: GROUP
+    label: Group
+    template: templates/group
+  - code: ENTITY
+    label: Entity
+    requiredCanonicalContext: owningEntityRef
+    template: templates/entity
+  - code: OPPORTUNITY
+    label: Opportunity
+    requiredCanonicalContext: opportunityRef
+    template: templates/opportunity
+  - code: PROJECT
+    label: Project
+    requiredCanonicalContext: projectRef
+    template: templates/project
+  - code: CONTRACT
+    label: Contract
+    requiredCanonicalContext: contractRef
+    template: templates/contract
+  - code: FUNCTION
+    label: Function
+    requiredCanonicalContext: functionCode
+    template: templates/function
+  - code: EXTERNAL
+    label: External Organization
+    requiredCanonicalContext: counterpartyRef
+    template: templates/external
