@@ -1,6 +1,10 @@
 # 03 — File Naming Standard
 
-## 1. Preferred controlled-document pattern
+## 1. Purpose
+
+The filename standard provides a compact, human-readable display label that helps users recognize a controlled file without turning the filename into canonical identity or a substitute for metadata.
+
+## 2. Preferred controlled-document pattern
 
 ```text
 [EnterpriseDocumentNo]_[Revision]_[ShortTitle].[ext]
@@ -12,15 +16,25 @@ Example:
 ABC-PRJ001-ENG-DRG-000245_C02_Equipment-Layout.pdf
 ```
 
-## 2. Minimum principles
+## 3. Purpose of each filename segment
+
+| Segment | Purpose | Boundary |
+|---|---|---|
+| `EnterpriseDocumentNo` | Provide the stable, controlled, human-readable business identifier for the logical document. | It is not the canonical `objectUID`; it must never be reused once issued. |
+| `Revision` | Let users quickly identify which controlled revision representation the file corresponds to. | It must agree with canonical revision metadata; renaming a file does not create a new revision. |
+| `ShortTitle` | Give users a concise, meaningful description of the content's subject/purpose. | It is mutable display text and must not be relied on as identity or classification. |
+| `ext` | Indicate the physical file format/encoding used by the stored representation. | It must reflect the actual format; file format does not determine document type or business purpose. |
+
+## 4. Minimum principles
 
 - The file name is a display label, not canonical identity.
 - The enterprise document number, when assigned, must never be reused.
 - Revision labels in a file name must agree with the canonical revision metadata for controlled content.
 - File extension must reflect the actual file format.
 - Short titles should be readable and concise.
+- A filename must not attempt to encode every business context, security classification, relationship, or lifecycle state.
 
-## 3. Uncontrolled/general files
+## 5. Uncontrolled/general files
 
 Where no controlled enterprise document number exists, use a descriptive pattern such as:
 
@@ -34,7 +48,14 @@ Example:
 PRJ001_2026-08-22_Site-Coordination-Notes.docx
 ```
 
-## 4. Avoid version noise
+Purpose of the segments:
+
+- `BusinessCode` — helps users recognize the relevant business context; canonical business context remains metadata.
+- `YYYY-MM-DD` — communicates the material event/document date where chronology is useful.
+- `ShortTitle` — communicates the subject/purpose in readable language.
+- `ext` — communicates the physical file format.
+
+## 6. Avoid version noise
 
 Prohibited examples include:
 
@@ -46,14 +67,14 @@ Copy of Copy of Contract.pdf
 
 Use canonical revision/version metadata rather than uncontrolled adjectives.
 
-## 5. Character guidance
+## 7. Character guidance
 
 Prefer letters, digits, hyphen, underscore, and period. Avoid provider-sensitive characters such as `\ / : * ? " < > |` in normative examples.
 
-## 6. Dates
+## 8. Dates
 
 When a date is part of the display name, use `YYYY-MM-DD`.
 
-## 7. Personal names
+## 9. Personal names
 
 Do not put personal names into filenames merely to indicate ownership or workflow state. Ownership, author, reviewer, and approver should be metadata where available.

@@ -53,6 +53,11 @@ Canonical revision lifecycle is independent of presentation folders. `DRAFT`, `W
 ### P15 — Relationships are explicit
 Co-location, nesting, shortcuts, or path ancestry do not replace canonical relationships. Business and information relationships must remain explicit EIOS records.
 
+### P16 — Every item has an explicit purpose and boundary
+Every normative information space, folder, template node, controlled view, and locally added structural item MUST exist for a defined business purpose. That purpose must state why the item exists, what information normally belongs there, and what should be routed elsewhere. Generic labels without a defined purpose are non-conforming. The authoritative purpose definitions are maintained in `15-purpose-register.md`.
+
+If two structural items cannot be distinguished by materially different purposes, they should normally be merged, represented as metadata/views, or redesigned rather than retained as ambiguous parallel folders.
+
 ## 3. Identity layers
 
 ```text

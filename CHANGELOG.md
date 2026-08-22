@@ -2,6 +2,29 @@
 
 All notable changes to the EIOS File & Folder Convention are recorded here.
 
+## [1.0.0-draft.3] - 2026-08-22
+
+### Added
+- Normative `15-purpose-register.md` defining **purpose, typical contents, and boundary/exclusions for every current structural node**.
+- Purpose-first principle requiring every information space, folder, template node, controlled view, and local structural addition to have a documented business reason.
+- Standard index explaining the purpose of every normative specification document.
+- Template catalogue explaining the purpose of all seven information-scope templates.
+- Examples index explaining why each example exists and its non-normative boundary.
+- Valid and invalid conformance fixtures for local purpose registration.
+- Purpose and boundary definitions for every information-scope crosswalk, repository-binding role, presentation/canonical lifecycle state, document type, discipline, and business-function code.
+
+### Changed
+- Logical information spaces now state the purpose of each enterprise domain and direct users to full boundary definitions.
+- Project, Opportunity/Tender, Governance, and Finance/Treasury standards now describe why every folder exists, what belongs there, and what should be routed elsewhere.
+- Group, Entity, Project, Opportunity, Contract, Function, and External-Organization templates are now self-describing rather than label-only folder trees.
+- Folder naming rules now reject structural folders that lack a registered purpose/boundary and explicitly discourage undefined catch-all categories.
+- File naming and enterprise document numbering now explain the purpose of every naming/numbering segment.
+- Taxonomy crosswalk rules now require semantic purpose/usage definitions rather than code + label alone.
+- Provider-mapping declaration items now each state why the capability/behavior must be documented.
+- Microsoft, Google, and Oracle placeholder profiles now state their implementation purpose and the questions each future mapping must answer.
+- Exception governance now requires purpose evidence for every local structural addition.
+- Conformance expanded with purpose completeness, purpose quality, sibling-purpose uniqueness, and local-addition registration tests.
+
 ## [1.0.0-draft.2] - 2026-08-22
 
 ### Added

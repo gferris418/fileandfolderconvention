@@ -1,0 +1,38 @@
+# INVALID: label-only or catch-all structural items
+# Each example fails because its purpose/boundary is undefined or indistinguishable.
+
+MISC/
+GENERAL/
+TEMP/
+OTHER/
+STUFF/
+DOCUMENTS/
+PROJECT_FILES/
+OLD/
+FINAL/
+
+# INVALID: purpose merely repeats label
+Item: 01_ADMINISTRATION
+Purpose: Administration
+
+# INVALID: no boundary
+Item: 02_REFERENCE
+Purpose: Store reference documents.
+TypicalContents: Documents used as reference.
+Boundary: <missing>
+
+# INVALID: duplicate sibling purposes
+Sibling A: 03_TECHNICAL
+Purpose: Store project technical documents.
+Sibling B: 04_ENGINEERING
+Purpose: Store project technical documents.
+
+# INVALID: folder used to manufacture canonical semantics
+Item: 05_APPROVED
+Purpose: Any file placed here becomes canonically APPROVED.
+
+Item: 06_LEGAL_HOLD
+Purpose: Any file placed here is legally held.
+
+Item: 07_AUTHORITATIVE
+Purpose: Any file placed here becomes the authoritative repository copy.

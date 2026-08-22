@@ -1,31 +1,45 @@
-version: 1.0.0-draft
+version: 1.0.0-draft.3
 namespace: eios-file-folder-information-scope
 note: Navigation crosswalk only. Canonical EIOS informationScope and businessContext remain authoritative.
 terms:
   - code: GROUP
     label: Group
+    purpose: Organize information whose governing business context is the enterprise or group as a whole rather than one specific legal Entity, Opportunity, Project, Contract, Function, or External Organization.
+    boundary: Folder placement does not create GROUP scope; canonical informationScope remains authoritative.
     template: templates/group
   - code: ENTITY
     label: Entity
+    purpose: Organize information whose strongest business context is one canonical legal/business Entity.
+    boundary: The folder does not define legal identity, ownership, jurisdiction, or cross-Entity relationships.
     requiredCanonicalContext: owningEntityRef
     template: templates/entity
   - code: OPPORTUNITY
     label: Opportunity
+    purpose: Organize pre-award business-development, tender, bid, submission, clarification, award-transition, and closure information for one Opportunity.
+    boundary: The folder does not create Opportunity status, award, Contract, or Project objects.
     requiredCanonicalContext: opportunityRef
     template: templates/opportunity
   - code: PROJECT
     label: Project
+    purpose: Organize planning, execution, control, delivery, assurance, finance, correspondence, training, handover, and closeout information for one Project.
+    boundary: The folder does not define participating Entity roles, Project lifecycle, or authoritative repository status.
     requiredCanonicalContext: projectRef
     template: templates/project
   - code: CONTRACT
     label: Contract
+    purpose: Organize formation, execution, amendments, obligations, payment, correspondence, claims, disputes, and closeout information for one Contract.
+    boundary: The folder does not define Contract parties, party roles, status, governing law, retention, or disposition.
     requiredCanonicalContext: contractRef
     template: templates/contract
   - code: FUNCTION
     label: Function
+    purpose: Organize recurring policy, operations, controls, reporting, knowledge, and records-support information governed primarily by one business function.
+    boundary: Function folders do not substitute for stronger Project, Opportunity, Contract, Entity, or External contexts when those apply.
     requiredCanonicalContext: functionCode
     template: templates/function
   - code: EXTERNAL
     label: External Organization
+    purpose: Provide a neutral navigation context for information centered on one third-party Organization across its possible business roles.
+    boundary: Customer, supplier, partner, regulator, subcontractor, consultant, and other roles remain contextual OrganizationRelationship data rather than separate identities.
     requiredCanonicalContext: counterpartyRef
     template: templates/external

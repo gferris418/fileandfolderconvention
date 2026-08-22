@@ -20,7 +20,22 @@ These are logical spaces. A provider may represent them as sites, libraries, sha
 
 They do not replace the seven EIOS `informationScope` values. Group, Entity, Opportunity, Project, Contract, Function, and External scope are canonical metadata/context dimensions that may cut across these navigational spaces.
 
-## 2. Governance
+## 2. Purpose of each enterprise space
+
+| Space | Primary purpose |
+|---|---|
+| `01_GOVERNANCE` | Direct, control, oversee, and assure the enterprise through strategy, corporate governance, legal, risk, policy, and audit information. |
+| `02_OPERATIONS` | Organize information used to win, plan, execute, control, and close operational work. |
+| `03_FINANCE_TREASURY` | Organize evidence and working information supporting accounting, cash, banking, tax, financial control, and reporting. |
+| `04_COMMERCIAL` | Organize market-facing and counterparty-related commercial information outside a stronger Opportunity/Project/Contract context. |
+| `05_PEOPLE_ADMINISTRATION` | Organize workforce administration, recruitment, competency, and people-policy information. |
+| `06_KNOWLEDGE` | Preserve reusable institutional knowledge, standards, templates, research, references, and lessons learned. |
+| `07_SHARED_SERVICES` | Organize enterprise-support functions serving multiple business units or scopes. |
+| `99_ARCHIVE` | Provide a human-facing historical/closed navigation projection without declaring record, retention, legal-hold, disposition, or repository status. |
+
+The complete purpose, typical contents, and boundary/exclusion definition for **every node listed below** is normative in [`15-purpose-register.md`](15-purpose-register.md). A node must not be implemented based only on its label.
+
+## 3. Governance
 
 ```text
 01_GOVERNANCE/
@@ -33,7 +48,9 @@ They do not replace the seven EIOS `informationScope` values. Group, Entity, Opp
 └── 07_BOARD_MANAGEMENT/
 ```
 
-## 3. Operations
+Each child has a distinct governance purpose: strategic direction, corporate-secretarial administration, legal matters, risk/compliance, controlled policy, independent internal audit, and governing-body management respectively. Detailed boundaries are in the Purpose & Boundary Register.
+
+## 4. Operations
 
 ```text
 02_OPERATIONS/
@@ -44,7 +61,9 @@ They do not replace the seven EIOS `informationScope` values. Group, Entity, Opp
 └── 05_OPERATIONS_MANAGEMENT/
 ```
 
-## 4. Finance and treasury
+These nodes separate pre-award business development, project delivery, procurement/logistics, quality/safety assurance, and cross-project operations management. Their purpose boundaries prevent project-specific records from becoming mixed with enterprise-level process material.
+
+## 5. Finance and treasury
 
 ```text
 03_FINANCE_TREASURY/
@@ -61,7 +80,9 @@ They do not replace the seven EIOS `informationScope` values. Group, Entity, Opp
 └── 11_FINANCIAL_REPORTING/
 ```
 
-## 5. Commercial
+The structure deliberately separates accounting support, incoming/outgoing settlement, project financial control, taxation, liquidity/treasury, bank-account administration, documentary credits, guarantees, finance-audit support, and reporting. Detailed purposes and exclusions are in the Purpose & Boundary Register.
+
+## 6. Commercial
 
 ```text
 04_COMMERCIAL/
@@ -75,11 +96,13 @@ They do not replace the seven EIOS `informationScope` values. Group, Entity, Opp
 
 ### Organization neutrality
 
-`01_ORGANIZATIONS` is the preferred master navigational root for third-party organizations. EIOS uses one canonical Organization identity with contextual `OrganizationRelationship` roles. Do not create separate canonical customer, supplier, partner, regulator, or subcontractor masters merely because those views are useful.
+`01_ORGANIZATIONS` provides a neutral navigational home/index for third-party organizations. EIOS uses one canonical Organization identity with contextual `OrganizationRelationship` roles. Do not create separate canonical customer, supplier, partner, regulator, or subcontractor masters merely because those views are useful.
 
-`02_RELATIONSHIP_VIEWS` may contain metadata-driven views, shortcuts, indexes, or provider-native filtered views such as Customers, Suppliers, Partners, Regulators, or Subcontractors. Such views should avoid uncontrolled duplicate content.
+`02_RELATIONSHIP_VIEWS` exists specifically to present those contextual roles as views, shortcuts, indexes, or provider-native filters. Its purpose is navigation; it does not create independent identities or role truth.
 
-## 6. People administration
+The remaining nodes separate reusable frameworks, pricing/costing knowledge, customer-facing sales-contract navigation, and market intelligence.
+
+## 7. People administration
 
 ```text
 05_PEOPLE_ADMINISTRATION/
@@ -90,9 +113,9 @@ They do not replace the seven EIOS `informationScope` values. Group, Entity, Opp
 └── 05_POLICIES/
 ```
 
-Sensitive personal information remains subject to EIOS security and data-category policy. Folder placement alone never grants access.
+These nodes separate workforce structure, recruitment, employee lifecycle administration, learning/competency, and people-function policy. Sensitive personal information remains subject to EIOS security and data-category policy. Folder placement alone never grants access.
 
-## 7. Knowledge
+## 8. Knowledge
 
 ```text
 06_KNOWLEDGE/
@@ -103,7 +126,9 @@ Sensitive personal information remains subject to EIOS security and data-categor
 └── 05_RESEARCH/
 ```
 
-## 8. Shared services
+The purpose of this space is reuse. Standards define controlled reference requirements; templates provide reusable starting artifacts; technical references provide reusable source material; lessons learned preserve validated improvement knowledge; research contains exploratory study material not yet promoted into a controlled standard/policy/template.
+
+## 9. Shared services
 
 ```text
 07_SHARED_SERVICES/
@@ -114,6 +139,8 @@ Sensitive personal information remains subject to EIOS security and data-categor
 └── 05_CORPORATE_COMMUNICATIONS/
 ```
 
-## 9. Archive
+These nodes separate technology support, premises/facilities, genuinely general administrative service, shared procurement support, and corporate communications. `03_ADMINISTRATION` must not become a `Misc` folder; it is valid only for information whose actual business purpose is administration.
 
-`99_ARCHIVE` is a human-facing organizational location for closed or historical material. It must not be treated as proof that an object is a formal record, under retention, immutable, on legal hold, authoritative, synchronized, or eligible for disposition.
+## 10. Archive
+
+`99_ARCHIVE` is a human-facing organizational location for closed or historical material. Its sole purpose is navigation of closed/historical information. It must not be treated as proof that an object is a formal record, under retention, immutable, on legal hold, authoritative, synchronized, or eligible for disposition.

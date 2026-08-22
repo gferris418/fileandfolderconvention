@@ -1,35 +1,47 @@
-version: 1.0.0-draft.2
+version: 1.0.0-draft.3
 namespace: eios-file-folder-discipline
 note: Presentation/naming codes only. Canonical EIOS disciplineCode terms remain authoritative.
 canonicalPattern: '^TAXON-DISC-[A-Z0-9-]+$'
 terms:
   - code: ENG
     label: Engineering
+    purpose: Classify information whose primary subject responsibility is technical definition, design, analysis, specification, or engineering assurance.
     canonicalExample: TAXON-DISC-ENG
   - code: PM
     label: Project Management
+    purpose: Classify information whose primary subject responsibility is project planning, governance, schedule, coordination, control, risk/action management, or project reporting.
     canonicalExample: TAXON-DISC-PM
   - code: COM
     label: Commercial
+    purpose: Classify information whose primary subject responsibility is commercial terms, pricing, contract administration, claims, negotiation, or commercial decision support.
     canonicalExample: TAXON-DISC-COM
   - code: FIN
     label: Finance
+    purpose: Classify information whose primary subject responsibility is accounting, cost, billing, payment, forecasting, treasury, tax, or financial reporting.
     canonicalExample: TAXON-DISC-FIN
   - code: PROC
     label: Procurement
+    purpose: Classify information whose primary subject responsibility is sourcing, purchasing, supplier selection, procurement administration, or supply-chain acquisition.
     canonicalExample: TAXON-DISC-PROC
   - code: LOG
     label: Logistics
+    purpose: Classify information whose primary subject responsibility is packing, shipping, freight, customs, transport, delivery, warehousing, or material movement.
     canonicalExample: TAXON-DISC-LOG
   - code: QA
     label: Quality Assurance
+    purpose: Classify information whose primary subject responsibility is quality planning, inspection, testing, non-conformance, corrective action, quality control, or quality assurance.
     canonicalExample: TAXON-DISC-QA
   - code: HSE
     label: Health Safety Environment
+    purpose: Classify information whose primary subject responsibility is occupational health, safety, environment, permit/control, incident, or HSE assurance.
     canonicalExample: TAXON-DISC-HSE
   - code: LEG
     label: Legal
+    purpose: Classify information whose primary subject responsibility is legal advice, legal interpretation, dispute/litigation support, legal risk, or legal-governance matters.
     canonicalExample: TAXON-DISC-LEG
   - code: ADM
     label: Administration
+    purpose: Classify information whose actual primary subject responsibility is general administrative support and which has no stronger specialist discipline.
+    boundary: Administration must not be used as a catch-all for information whose true discipline is known.
     canonicalExample: TAXON-DISC-ADM
+rule: Assign discipline based on primary subject responsibility, not the creator's department or the folder in which the item happens to reside.
