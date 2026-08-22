@@ -1,0 +1,22 @@
+# Each line describes an inference a conforming implementation MUST reject.
+
+Folder `PROJECTS/PRJ001/` creates canonical Project identity PRJ001.
+Folder `CUSTOMERS/ORG001/` creates a second canonical Organization separate from `SUPPLIERS/ORG001/`.
+Folder `PUBLISHED/` changes a revision lifecycle state to PUBLISHED.
+Folder `RECORDS/` declares every contained file a CanonicalRecord.
+Folder `LEGAL_HOLD/` creates an active LegalHold.
+Folder `DO_NOT_DELETE/` creates an immutability/WORM policy.
+Folder `EU_ONLY/` proves data residency compliance.
+Folder `AUTHORITATIVE/` changes RepositoryBinding.bindingRole to AUTHORITATIVE.
+Folder `READ_ONLY/` changes RepositoryBinding.writeMode to READ_ONLY.
+Folder `CURRENT/` proves RepositoryBinding.synchronizationState is CURRENT.
+Moving a document into `99_ARCHIVE/` starts a retention clock.
+Deleting a file from `99_ARCHIVE/` authorizes canonical disposition.
+Nesting document B under document A creates a BELONGS-TO canonical relationship.
+Files physically present in `05_FINAL_SUBMISSION/` automatically become CanonicalPackage members.
+A provider-native permission mapping may add users because the folder path is shared.
+Changing the filename changes the canonical objectUID.
+Reusing a withdrawn enterpriseDocumentNo is acceptable if the old file was deleted.
+A message must be copied to a `.msg` or `.eml` file before EIOS can manage it.
+A database dataset must be exported to XLSX before it can be canonically represented.
+A local YAML taxonomy code may silently replace a superseded canonical term with a new meaning.
