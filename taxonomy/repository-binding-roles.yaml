@@ -1,4 +1,4 @@
-version: 1.0.0-draft.2
+version: 1.0.0-draft.3
 namespace: eios-file-folder-repository-binding-role
 note: Canonical EIOS repository-binding values reproduced as a provider-mapping crosswalk; folder names do not establish these roles.
 terms:
