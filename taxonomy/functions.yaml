@@ -1,4 +1,4 @@
-version: 1.0.0-draft.2
+version: 1.0.0-draft.3
 namespace: eios-file-folder-function
 note: Presentation/navigation codes. Canonical EIOS functionCode terms remain authoritative and must satisfy the EIOS function taxonomy mapping.
 canonicalPattern: '^TAXON-FUNC-[A-Z0-9-]+$'
