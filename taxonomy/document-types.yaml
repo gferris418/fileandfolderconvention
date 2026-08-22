@@ -5,34 +5,46 @@ canonicalPattern: '^TAXON-DOC-[A-Z0-9-]+$'
 terms:
   - code: DRG
     label: Drawing
+    purpose: Identify graphical/diagrammatic technical documents whose primary function is to communicate spatial, dimensional, schematic, layout, or construction/design information.
     canonicalExample: TAXON-DOC-DRG
   - code: SPEC
     label: Specification
+    purpose: Identify documents that define technical, functional, performance, material, process, or acceptance requirements.
     canonicalExample: TAXON-DOC-SPEC
   - code: RPT
     label: Report
+    purpose: Identify structured documents that communicate findings, status, analysis, results, assessments, or conclusions.
     canonicalExample: TAXON-DOC-RPT
   - code: MOM
     label: Minutes of Meeting
+    purpose: Identify the formal record of a meeting's attendees, discussions, decisions, actions, and agreed outcomes.
     canonicalExample: TAXON-DOC-MOM
   - code: COR
     label: Correspondence
+    purpose: Identify formal communication documents such as letters, notices, transmittals, or material communication records.
     canonicalExample: TAXON-DOC-COR
   - code: CTR
     label: Contract
+    purpose: Identify documents whose primary purpose is to record legally/commercially binding contractual terms or the executed agreement representation.
     canonicalExample: TAXON-DOC-CTR
   - code: INV
     label: Invoice
+    purpose: Identify billing documents requesting or documenting payment for goods, services, milestones, or other chargeable obligations.
     canonicalExample: TAXON-DOC-INV
   - code: CERT
     label: Certificate
+    purpose: Identify formal evidence that a condition, achievement, inspection, test, qualification, approval, or compliance statement has been certified.
     canonicalExample: TAXON-DOC-CERT
   - code: MAN
     label: Manual
+    purpose: Identify structured operational, maintenance, user, technical, or instructional documentation intended for ongoing reference/use.
     canonicalExample: TAXON-DOC-MAN
   - code: PLAN
     label: Plan
+    purpose: Identify documents that define intended future activities, sequence, responsibilities, resources, controls, or execution approach.
     canonicalExample: TAXON-DOC-PLAN
   - code: REG
     label: Register
+    purpose: Identify controlled tabular/list records used to track a defined population of items, statuses, actions, risks, documents, assets, obligations, or other managed entries.
     canonicalExample: TAXON-DOC-REG
+rule: Choose a document type based on the information object's primary business purpose, not merely its file format or folder location.
