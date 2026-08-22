@@ -1,4 +1,4 @@
-version: 1.0.0-draft.2
+version: 1.0.0-draft.3
 namespace: eios-file-folder-document-type
 note: Presentation/naming codes only. Canonical EIOS documentTypeCode terms remain authoritative.
 canonicalPattern: '^TAXON-DOC-[A-Z0-9-]+$'
