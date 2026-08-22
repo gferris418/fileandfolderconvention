@@ -1,4 +1,4 @@
-version: 1.0.0-draft
+version: 1.0.0-draft.2
 namespace: eios-file-folder-lifecycle
 note: Presentation states only. They do not replace or automatically map to canonical EIOS revision lifecycle metadata.
 presentationTerms:
