@@ -1,7 +1,7 @@
 # EIOS File & Folder Convention
 
-**Version:** 1.0.0-draft.2  
-**Status:** Working Standard — CIM-aligned  
+**Version:** 1.0.0-draft.3  
+**Status:** Working Standard — CIM-aligned, purpose-defined  
 **Relationship to EIOS:** Human-facing information organization and presentation standard. It does **not** modify EIOS Core Architecture or EIOS-CIM.
 
 ## Purpose
@@ -64,7 +64,7 @@ FUNCTION
 EXTERNAL
 ```
 
-See [`standard/v1.0/11-eios-cim-alignment.md`](standard/v1.0/11-eios-cim-alignment.md), [`standard/v1.0/12-repository-projection-and-bindings.md`](standard/v1.0/12-repository-projection-and-bindings.md), [`standard/v1.0/13-portability-export-structure.md`](standard/v1.0/13-portability-export-structure.md), and [`standard/v1.0/15-purpose-register.md`](standard/v1.0/15-purpose-register.md).
+See [`standard/v1.0/README.md`](standard/v1.0/README.md), [`standard/v1.0/11-eios-cim-alignment.md`](standard/v1.0/11-eios-cim-alignment.md), [`standard/v1.0/12-repository-projection-and-bindings.md`](standard/v1.0/12-repository-projection-and-bindings.md), [`standard/v1.0/13-portability-export-structure.md`](standard/v1.0/13-portability-export-structure.md), and [`standard/v1.0/15-purpose-register.md`](standard/v1.0/15-purpose-register.md).
 
 ## Repository layout and the purpose of each area
 
