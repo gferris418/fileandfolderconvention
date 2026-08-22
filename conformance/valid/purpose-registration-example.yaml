@@ -1,0 +1,17 @@
+# Valid local structural addition example
+# This is illustrative; a real implementation may store the register in another governed format.
+itemName: 07_VENDOR_DATA_INTAKE
+parentNode: 03_ENGINEERING
+purpose: Provide a controlled intake/staging location for technical data received from external manufacturers or suppliers before review and classification into the appropriate engineering deliverable context.
+typicalContents:
+  - received technical datasheets
+  - manufacturer drawings awaiting review
+  - received calculation packages
+  - supplier technical submissions awaiting routing
+exclusionsOrBoundary:
+  - Approved engineering deliverables belong in their controlled Engineering document context after review.
+  - Procurement/commercial supplier records belong under Procurement/Logistics or Contract/Commercial as appropriate.
+  - Placement here does not create a canonical Organization relationship, document type, review status, or approval state.
+ownerOrSteward: Engineering Information Steward
+effectiveFrom: 2026-08-22
+reviewDate: 2027-08-22
