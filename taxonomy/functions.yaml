@@ -5,22 +5,30 @@ canonicalPattern: '^TAXON-FUNC-[A-Z0-9-]+$'
 terms:
   - code: GOV
     label: Governance
+    purpose: Represent the enterprise function responsible for direction, corporate governance, legal/risk oversight, policy control, board support, and assurance.
     canonicalExample: TAXON-FUNC-GOVERNANCE
   - code: OPS
     label: Operations
+    purpose: Represent the enterprise function responsible for delivery, project/operational execution, procurement/logistics coordination, QA/QC/HSE, and operational management.
     canonicalExample: TAXON-FUNC-OPERATIONS
   - code: FIN
     label: Finance and Treasury
+    purpose: Represent the enterprise function responsible for accounting, receivables/payables, tax, treasury, banking, financial control, and reporting.
     canonicalExample: TAXON-FUNC-FINANCE-TREASURY
   - code: COM
     label: Commercial
+    purpose: Represent the enterprise function responsible for market/customer/counterparty commercial activity, frameworks, pricing, contracting, and commercial intelligence.
     canonicalExample: TAXON-FUNC-COMMERCIAL
   - code: PPL
     label: People Administration
+    purpose: Represent the enterprise function responsible for workforce administration, recruitment, employee lifecycle, training/competency, and people policy.
     canonicalExample: TAXON-FUNC-PEOPLE-ADMINISTRATION
   - code: KNW
     label: Knowledge
+    purpose: Represent the enterprise function responsible for reusable standards, templates, reference knowledge, lessons learned, and research stewardship.
     canonicalExample: TAXON-FUNC-KNOWLEDGE
   - code: SHR
     label: Shared Services
+    purpose: Represent common support functions such as IT, facilities, administration, procurement support, and corporate communications serving multiple business contexts.
     canonicalExample: TAXON-FUNC-SHARED-SERVICES
+rule: Function codes identify the governing business function; they do not replace Entity, Project, Opportunity, Contract, or External Organization business context where those scopes apply.
