@@ -1,0 +1,35 @@
+version: 1.0.0-draft.2
+namespace: eios-file-folder-discipline
+note: Presentation/naming codes only. Canonical EIOS disciplineCode terms remain authoritative.
+canonicalPattern: '^TAXON-DISC-[A-Z0-9-]+$'
+terms:
+  - code: ENG
+    label: Engineering
+    canonicalExample: TAXON-DISC-ENG
+  - code: PM
+    label: Project Management
+    canonicalExample: TAXON-DISC-PM
+  - code: COM
+    label: Commercial
+    canonicalExample: TAXON-DISC-COM
+  - code: FIN
+    label: Finance
+    canonicalExample: TAXON-DISC-FIN
+  - code: PROC
+    label: Procurement
+    canonicalExample: TAXON-DISC-PROC
+  - code: LOG
+    label: Logistics
+    canonicalExample: TAXON-DISC-LOG
+  - code: QA
+    label: Quality Assurance
+    canonicalExample: TAXON-DISC-QA
+  - code: HSE
+    label: Health Safety Environment
+    canonicalExample: TAXON-DISC-HSE
+  - code: LEG
+    label: Legal
+    canonicalExample: TAXON-DISC-LEG
+  - code: ADM
+    label: Administration
+    canonicalExample: TAXON-DISC-ADM

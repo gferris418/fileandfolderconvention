@@ -1,0 +1,26 @@
+version: 1.0.0-draft.2
+namespace: eios-file-folder-function
+note: Presentation/navigation codes. Canonical EIOS functionCode terms remain authoritative and must satisfy the EIOS function taxonomy mapping.
+canonicalPattern: '^TAXON-FUNC-[A-Z0-9-]+$'
+terms:
+  - code: GOV
+    label: Governance
+    canonicalExample: TAXON-FUNC-GOVERNANCE
+  - code: OPS
+    label: Operations
+    canonicalExample: TAXON-FUNC-OPERATIONS
+  - code: FIN
+    label: Finance and Treasury
+    canonicalExample: TAXON-FUNC-FINANCE-TREASURY
+  - code: COM
+    label: Commercial
+    canonicalExample: TAXON-FUNC-COMMERCIAL
+  - code: PPL
+    label: People Administration
+    canonicalExample: TAXON-FUNC-PEOPLE-ADMINISTRATION
+  - code: KNW
+    label: Knowledge
+    canonicalExample: TAXON-FUNC-KNOWLEDGE
+  - code: SHR
+    label: Shared Services
+    canonicalExample: TAXON-FUNC-SHARED-SERVICES

@@ -1,0 +1,23 @@
+version: 1.0.0-draft.2
+namespace: eios-file-folder-lifecycle
+note: Presentation states only. They do not replace or automatically map to canonical EIOS revision lifecycle metadata.
+presentationTerms:
+  - code: ACTIVE
+    label: Active Working Projection
+  - code: CLOSEOUT
+    label: Closeout Projection
+  - code: CLOSED
+    label: Closed Projection
+  - code: ARCHIVED
+    label: Archived Projection
+canonicalRevisionReference:
+  - DRAFT
+  - WORKING
+  - REVIEW
+  - AUTHORIZED
+  - PUBLISHED
+  - SUPERSEDED
+  - WITHDRAWN
+  - RECORD
+  - DISPOSED
+rule: A file or folder move never changes canonical revision lifecycle state by itself.

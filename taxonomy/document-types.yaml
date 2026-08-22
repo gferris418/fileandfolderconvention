@@ -1,0 +1,38 @@
+version: 1.0.0-draft.2
+namespace: eios-file-folder-document-type
+note: Presentation/naming codes only. Canonical EIOS documentTypeCode terms remain authoritative.
+canonicalPattern: '^TAXON-DOC-[A-Z0-9-]+$'
+terms:
+  - code: DRG
+    label: Drawing
+    canonicalExample: TAXON-DOC-DRG
+  - code: SPEC
+    label: Specification
+    canonicalExample: TAXON-DOC-SPEC
+  - code: RPT
+    label: Report
+    canonicalExample: TAXON-DOC-RPT
+  - code: MOM
+    label: Minutes of Meeting
+    canonicalExample: TAXON-DOC-MOM
+  - code: COR
+    label: Correspondence
+    canonicalExample: TAXON-DOC-COR
+  - code: CTR
+    label: Contract
+    canonicalExample: TAXON-DOC-CTR
+  - code: INV
+    label: Invoice
+    canonicalExample: TAXON-DOC-INV
+  - code: CERT
+    label: Certificate
+    canonicalExample: TAXON-DOC-CERT
+  - code: MAN
+    label: Manual
+    canonicalExample: TAXON-DOC-MAN
+  - code: PLAN
+    label: Plan
+    canonicalExample: TAXON-DOC-PLAN
+  - code: REG
+    label: Register
+    canonicalExample: TAXON-DOC-REG
