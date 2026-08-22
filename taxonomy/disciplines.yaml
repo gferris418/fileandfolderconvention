@@ -1,4 +1,4 @@
-version: 1.0.0-draft.2
+version: 1.0.0-draft.3
 namespace: eios-file-folder-discipline
 note: Presentation/naming codes only. Canonical EIOS disciplineCode terms remain authoritative.
 canonicalPattern: '^TAXON-DISC-[A-Z0-9-]+$'
