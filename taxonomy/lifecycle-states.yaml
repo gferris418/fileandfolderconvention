@@ -4,20 +4,37 @@ note: Presentation states only. They do not replace or automatically map to cano
 presentationTerms:
   - code: ACTIVE
     label: Active Working Projection
+    purpose: Present information that users are currently working with or consulting as active business material.
+    boundary: ACTIVE is navigational only and does not imply canonical DRAFT, WORKING, REVIEW, AUTHORIZED, or PUBLISHED state.
   - code: CLOSEOUT
     label: Closeout Projection
+    purpose: Present information being finalized, accepted, reconciled, transferred, or administratively completed before closure.
+    boundary: CLOSEOUT does not start retention, declare a record, or prove contractual/project completion by itself.
   - code: CLOSED
     label: Closed Projection
+    purpose: Present information associated with a business context that is no longer active for routine work.
+    boundary: CLOSED does not automatically set canonical Project/Opportunity/Contract status, revision lifecycle, or disposition eligibility.
   - code: ARCHIVED
     label: Archived Projection
+    purpose: Present historical information retained for reference after active use has ended.
+    boundary: ARCHIVED does not mean CanonicalRecord, legal hold, immutable, retained, disposed, or authoritative.
 canonicalRevisionReference:
-  - DRAFT
-  - WORKING
-  - REVIEW
-  - AUTHORIZED
-  - PUBLISHED
-  - SUPERSEDED
-  - WITHDRAWN
-  - RECORD
-  - DISPOSED
+  - code: DRAFT
+    purpose: Canonical revision state for content being initially prepared before broader working/review stages.
+  - code: WORKING
+    purpose: Canonical revision state for content actively being developed or collaboratively edited.
+  - code: REVIEW
+    purpose: Canonical revision state for content submitted for checking, review, comment, or approval consideration.
+  - code: AUTHORIZED
+    purpose: Canonical revision state for content that has received the required authorization but is not necessarily published/distributed.
+  - code: PUBLISHED
+    purpose: Canonical revision state for content formally released to its intended audience/use.
+  - code: SUPERSEDED
+    purpose: Canonical revision state for a formerly valid revision replaced by a later revision while preserving history.
+  - code: WITHDRAWN
+    purpose: Canonical revision state for content intentionally removed from active use without deleting its identity/history.
+  - code: RECORD
+    purpose: Canonical revision state indicating content preserved as a formal record under records governance.
+  - code: DISPOSED
+    purpose: Canonical revision state indicating governed disposition has occurred while identity/audit lineage remains preserved.
 rule: A file or folder move never changes canonical revision lifecycle state by itself.
