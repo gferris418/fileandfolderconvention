@@ -1,20 +1,36 @@
-version: 1.0.0-draft
+version: 1.0.0-draft.2
 namespace: eios-file-folder-repository-binding-role
 note: Canonical EIOS repository-binding values reproduced as a provider-mapping crosswalk; folder names do not establish these roles.
 terms:
   - code: AUTHORITATIVE
     label: Authoritative
+    purpose: Identify the repository binding designated as the enterprise authoritative location for the relevant canonical object/version under EIOS policy.
+    boundary: A folder named AUTHORITATIVE cannot create this role; the RepositoryBinding is authoritative.
   - code: WORKING
     label: Working
+    purpose: Identify a repository binding used for active editing, collaboration, or work-in-progress before publication or record preservation.
+    boundary: Working does not imply lesser canonical identity or permit uncontrolled authorization broadening.
   - code: PUBLISHED
     label: Published
+    purpose: Identify a repository binding intended to expose an approved/published representation to its intended audience.
+    boundary: Publication status must agree with canonical lifecycle/policy; folder placement alone cannot publish content.
   - code: RECORD_COPY
     label: Record Copy
+    purpose: Identify a repository binding used to preserve the designated record copy subject to applicable records/governance controls.
+    boundary: The binding role does not replace CanonicalRecord declaration, retention, legal hold, or immutability policy.
   - code: REPLICA
     label: Replica
+    purpose: Identify a synchronized secondary copy maintained for availability, locality, continuity, or controlled distribution.
+    boundary: A replica is not authoritative unless a separate policy decision changes the authoritative binding.
   - code: CACHE
     label: Cache
+    purpose: Identify a transient or performance-oriented copy that can be regenerated from a governed source.
+    boundary: A cache must not become the sole preserved copy or be treated as authoritative business evidence.
   - code: MIGRATION_SOURCE
     label: Migration Source
+    purpose: Identify the source binding from which content/metadata is being migrated during a controlled repository transition.
+    boundary: This role is migration-specific and does not by itself change canonical ownership, lifecycle, or retention.
   - code: MIGRATION_TARGET
     label: Migration Target
+    purpose: Identify the destination binding receiving content/metadata during a controlled repository migration.
+    boundary: Target status does not automatically make the repository authoritative until cutover/policy explicitly establishes the new role.
