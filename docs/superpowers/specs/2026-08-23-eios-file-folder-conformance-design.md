@@ -45,9 +45,13 @@ The provider-mapping rules will state explicitly:
 
 This is terminology hardening of an existing convention rule, not a new security model.
 
-### H02 — Machine-readable taxonomy crosswalk
+### H02 — Machine-readable canonical crosswalks
 
-Every controlled local taxonomy crosswalk entry used as controlled metadata MUST contain an unambiguous canonical mapping.
+H02 applies according to the semantic type being crosswalked. The `taxonomy/` directory contains both true EIOS taxonomy-term crosswalks and crosswalks to canonical enum/value domains; these MUST NOT be conflated.
+
+#### H02-A — Crosswalk to `TaxonomyTerm`
+
+Every local controlled term that represents an EIOS taxonomy term MUST contain an unambiguous canonical term mapping.
 
 Required field:
 
@@ -81,7 +85,27 @@ The two identifiers are distinct:
 
 Local labels and short codes MUST NOT create a shadow taxonomy or silently replace a canonical term.
 
-The existing `canonicalExample` field is transitional documentation only. Draft.4 will replace controlled mappings with `canonicalTermCode` and conformance will reject controlled entries lacking it.
+Existing `canonicalExample` fields for taxonomy-term crosswalks are transitional documentation only. Draft.4 will replace them with `canonicalTermCode`; conformance will reject taxonomy-term entries lacking an unambiguous canonical mapping.
+
+#### H02-B — Crosswalk to canonical enum/value
+
+Crosswalks such as `informationScope`, canonical revision lifecycle state, or `RepositoryBinding.bindingRole` are not automatically `TaxonomyTerm` objects. They MUST map to their actual canonical value rather than inventing a `TAXON-*` code.
+
+Example:
+
+```yaml
+canonicalValue: PROJECT
+canonicalSource: CanonicalInformationObject.informationScope
+```
+
+or:
+
+```yaml
+canonicalValue: AUTHORITATIVE
+canonicalSource: RepositoryBinding.bindingRole
+```
+
+The conformance suite will validate the declared canonical value against the locked CIM schema/domain where possible.
 
 ---
 
@@ -111,6 +135,8 @@ Canonical metadata may independently contain:
 ```
 
 The suite must verify separation between canonical identity, enterprise document number, and display filename.
+
+The current naming document calls the controlled filename grammar a **preferred** pattern. Certification therefore distinguishes normative naming prohibitions from recommendations: identity separation, non-reuse, revision consistency, actual extension, prohibited version noise, and provider-sensitive characters are tested according to their normative wording; the preferred filename layout itself is not silently upgraded into a new release-blocking `MUST` unless the convention is separately amended to do so.
 
 ### 3.2 Seven information scopes, six mandatory context rules
 
@@ -315,12 +341,12 @@ Tests:
 
 Tests:
 
-- controlled filenames follow the convention grammar where the standard marks it normative;
+- release-blocking tests cover only naming requirements expressed normatively by the convention;
 - `EnterpriseDocumentNo`, revision, short title, and extension remain display/business fields, not canonical UID;
-- provider-sensitive characters are rejected by normative filename fixtures;
-- uncontrolled version-noise patterns are rejected;
+- provider-sensitive characters and uncontrolled version-noise patterns are tested according to the normative wording of the naming standard;
 - filename/path changes do not alter `objectUID`;
-- issued `enterpriseDocumentNo` values are never reused in stateful certification fixtures.
+- issued `enterpriseDocumentNo` values are never reused in stateful certification fixtures;
+- the preferred controlled filename pattern is exercised by positive fixtures but is not promoted into a stronger requirement solely by the test suite.
 
 The suite must not invent a requirement that all filenames contain `objectUID`.
 
@@ -388,15 +414,26 @@ legalHold unchanged
 retention unchanged
 ```
 
-### Domain 5 — Taxonomy and provider mapping
+### Domain 5 — Canonical crosswalks and provider mapping
 
-Tests:
+Tests distinguish true taxonomy terms from canonical enum/value domains.
 
-- every controlled local crosswalk term has `canonicalTermCode`;
+For taxonomy-term crosswalks:
+
+- every controlled taxonomy-term entry has `canonicalTermCode`;
 - `canonicalTermCode` matches `^TAXON-[A-Z0-9-]+$`;
 - optional `canonicalTermRef.objectUID` matches `^TAXONTERM-[A-Z0-9]{6,64}$`;
 - code and UID are never confused;
-- when authoritative registry data is available, referenced canonical terms must exist;
+- when authoritative registry data is available, referenced canonical terms must exist.
+
+For canonical enum/value crosswalks:
+
+- entries declare `canonicalValue` and `canonicalSource`;
+- values are checked against the locked CIM schema/domain when machine-resolvable;
+- the suite never invents a taxonomy term merely because a crosswalk file resides under `taxonomy/`.
+
+For provider mappings:
+
 - `PermissionBinding.mappingDirection = BROADEN` fails;
 - `PRESERVE` and `RESTRICT` are valid schema values;
 - provider permission implementation that increases effective access fails even if the declared mapping says `PRESERVE` or `RESTRICT`;
@@ -414,20 +451,18 @@ Certification will use:
 conformance/certification/cim-baseline.lock.json
 ```
 
-The lock records at minimum:
+The lock is a concrete release artifact, generated only when the authoritative CIM release package is available. It MUST contain:
 
-```json
-{
-  "cimVersion": "1.0.0",
-  "schemaCount": 51,
-  "manifestDigest": "sha256:<authoritative-release-digest>",
-  "source": "<authoritative-release-location>"
-}
+```text
+cimVersion       exactly 1.0.0
+schemaCount      exactly 51
+manifestDigest   string matching ^sha256:[0-9a-f]{64}$
+source           immutable or version-pinned authoritative release location
 ```
 
-The runner must verify the baseline before issuing a release certificate.
+The runner must verify those values and the actual CIM package before issuing a release certificate.
 
-Development may support an explicit `--cim-dir` input. Final release certification must fail closed if the supplied CIM cannot be matched to the locked authoritative baseline.
+Development may support an explicit `--cim-dir` input. Final release certification must fail closed if the supplied CIM cannot be matched to the locked authoritative baseline. If the authoritative package digest/location has not yet been published, development tests may run but the release-certification decision MUST remain ineligible rather than fabricating lock values.
 
 ---
 
@@ -513,14 +548,16 @@ This work does not:
 - require OPA/Rego;
 - make paths authoritative for security, lifecycle, retention, hold, residency, relationships, or repository role;
 - create provider-specific certification requirements before the corresponding provider profile exists;
-- prohibit a folder merely because its label resembles a canonical governance concept; only semantic inference/use is prohibited unless another naming rule separately forbids it.
+- prohibit a folder merely because its label resembles a canonical governance concept; only semantic inference/use is prohibited unless another naming rule separately forbids it;
+- convert canonical enums into artificial taxonomy terms;
+- strengthen advisory/preferred wording into release-blocking requirements without a separate normative standard change.
 
 ---
 
 ## 12. Implementation sequencing after design approval
 
 1. Apply H01/H02 documentation changes and advance the working convention to `1.0.0-draft.4`.
-2. Add schemas for fixture envelopes and provider/taxonomy test inputs.
+2. Add schemas for fixture envelopes and provider/crosswalk test inputs.
 3. Add failing tests first for each conformance domain.
 4. Implement minimal rule/runner logic to satisfy those tests.
 5. Add positive and negative fixtures for all 24 conformance classes.
